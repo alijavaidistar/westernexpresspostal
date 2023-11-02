@@ -12,11 +12,115 @@ body {
     background-color: white; /* light gray background */
 }
 
+.header {
+	display: flex;
+	align-items: center;
+	width: 100%;
+	position: relative;
+	padding: 2rem 2rem 0 3rem;
+}
+
+.website-name {
+	font-size: 1.5rem;
+	font-weight: bold;
+	color: #081B4B;
+}
+
+.website-homepage-link {
+	color: #081B4B;
+}
+
+.website-homepage-link:link {
+	text-decoration: none;
+}
+
+.website-homepage-link:visited {
+	text-decoration: none;
+}
+
+.navbar {
+	display: flex;
+	width: min-content;
+}
+
+.navlist {
+	display: flex;
+	list-style: none;
+	padding: 0.2rem 0 0 2rem;
+}
+
+.navlist-item {
+	margin: 0 1rem 0 1rem;
+}
+
+.navlist-link {
+	color: #081B4B;
+	font-size: 1rem;
+	font-weight: bold;
+}
+
+.navlist-link:link {
+	text-decoration: none;
+}
+
+.navlist-link:visited {
+	text-decoration: none;
+}
+
+.account-buttons {
+	display: flex;
+	position: absolute;
+	top: 2rem;
+	right: 3rem;
+}
+
+.sign-in-button {
+	border: none;
+	background-color: white;
+	margin-right: 2rem;
+}
+
+.sign-in-link {
+	color:#081B4B;
+	font-size: 1rem;
+	font-weight: bold;
+}
+
+.sign-in-link:link {
+	text-decoration: none;
+}
+
+.sign-in-link:visited {
+	text-decoration: none;
+}
+
+.sign-up-button {
+	background-color: #081B4B;
+	border-radius: 0.5rem;
+	border: none;
+	padding: 0.75rem 1.5rem 0.75rem 1.5rem;
+}
+
+.sign-up-link {
+	color: white;
+	font-size: 1rem;
+	font-weight: bold;
+}
+
+.sign-up-link:link {
+	text-decoration: none;
+}
+
+.sign-up-link:visited {
+	text-decoration: none;
+}
+
 .tracking-section {
 	display: flex;
 	flex-direction: column;
 	position: relative;
-	height: 85vh;
+	min-height: 80vh;
+	max-height: max-content;
 	background-color: #E1FAFF;
 	border-radius: 2rem;
 	margin: 4rem 3rem 2rem 3rem;
@@ -37,8 +141,9 @@ body {
 	position: relative;
 	width: 100%;
 	flex-direction: column;
-	justify-content: center;
+	margin-top: 3rem;
 	align-items: center;
+
 	/*border: 1px solid red;*/
 }
 
@@ -67,7 +172,7 @@ body {
 	margin-bottom: 1rem;
 	padding: 1rem 8rem 1rem 1rem;
 	border-radius: 0.5rem;
-	background-color: #F2F2F2;
+	background-color: white;
 	font-size: 1.25rem;
 	border: solid 1px gray;
 }

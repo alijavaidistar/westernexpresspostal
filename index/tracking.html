@@ -7,29 +7,31 @@
     <link rel="stylesheet" href="\css\tracking.css"> <!-- Link to your homepage CSS file -->
 </head>
 <body>
-    <!--<header>
-        <h1>Western Express Logistics</h1>
-        <nav class="top-menu">
-            <ul>
-                <li><a href="about.html">About</a></li>                     
-                <li><a href="services.html">Services</a></li>               
-                <li><a href="locations.html">Locations</a></li>           
-                <li><a href="home_sign_up.html">Sign Up</a></li>                  
-                <li><a href="home_sign_in.html">Sign In</a></li>            
+    <header class="header">
+        <h1 class="website-name"><a class="website-homepage-link" href="homepage.html">Western Express Logistics</a></h1>
+        <nav class="navbar">
+            <ul class="navlist">
+				<li class="navlist-item"><a class="navlist-link" href="shipping.html">Shipping</a></li>
+				<li class="navlist-item"><a class="navlist-link" href="tracking.html">Tracking</a></li>
+                <li class="navlist-item"><a class="navlist-link" href="locations.html">Locations</a></li>                     
+                <li class="navlist-item"><a class="navlist-link" href="support.html">Support</a></li>               
+                <li class="navlist-item"><a class="navlist-link" href="about.html">About</a></li>                       
             </ul>
+			<div class="account-buttons">
+				<button class="sign-in-button"><a class="sign-in-link" href="home_sign_in.html">Log In</a></button>                  
+            	<button class="sign-up-button"><a class="sign-up-link" href="home_sign_up.html">Sign Up</a></button>
+			</div>
         </nav>
     </header>
-	-->
 	<section class="tracking-section">
 		<span class="section-header">Tracking</span>
-		<!--<div class="track-box">
-			<span class="track-box-desc">Tracking</span>
-			<form action="" class="tracking-search-form">
-				<label for="track" class="tracking-label"></label>
-				<input type="text" name="track" id="track" class="tracking-input" placeholder="Enter a 20-digit tracking number" required />
-				<button type="submit" class="tracking-search-button">Search</button>
+		<div class="track-box">
+			<form class="tracking-search-form" action="/track" method="post">
+				<label for="tracking-input" class="tracking-label"></label>
+				<input type="text" name="tracking-input" id="tracking-input" class="tracking-input" placeholder="Enter a 20-digit tracking number" required />
+				<button id="tracking-submit" class="tracking-search-button">Search</button>
 			</form>
-		</div>-->
+		</div>
 		<!--<div class="progress-bar-div">
 			<ol class="progress-bar">
 				<li class="status-node">
@@ -111,5 +113,11 @@
 			</div>
 		</div>
 	</section>
+	<script>
+		/*const form_button = document.getElementById('tracking-submit');
+		const form_input = document.getElementById('tracking-input').value;
+
+		form_button.addEventListener('click', form_submission());*/
+	</script>
 </body>
 </html>

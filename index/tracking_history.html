@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tracking Details</title>
+</head>
+<body>
+    <h2>Enter Tracking Number</h2>
+    <form id="trackingForm" onsubmit="getTrackingDetails(event)">
+        <label for="tracking_number_input">Tracking Number:</label>
+        <input type="text" id="tracking_number_input" name="tracking_number_input">
+        <input type="submit" value="Submit">
+    </form>
+
+    <h2>Tracking Details:</h2>
+    <div id="trackingDetails"></div>
+
+    <script>
+        async function getTrackingDetails(event) {
+            event.preventDefault();
+            const trackingNumber = document.getElementById('tracking_number_input').value;
+
+            try {
+                // Use Node.js to fetch the tracking details based on the tracking number
+                const response = await fetch(`/getTrackingDetails?tracking_number=${trackingNumber}`);
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                const trackingDetails = await response.json();
+
+                // Display the tracking details in the HTML page
+                const trackingDetailsDiv = document.getElementById('trackingDetails');
+                trackingDetailsDiv.innerHTML = `
+                    <p><strong>Tracking Number:</strong> ${trackingDetails.tracking_number}</p>
+                    <p><strong>Send Date:</strong> ${trackingDetails.send_date}</p>
+                    <p><strong>Receiving Date:</strong> ${trackingDetails.receiving_date}</p>
+                    <p><strong>Sender ID:</strong> ${trackingDetails.sender_id}</p>
+                    <p><strong>Receiver ID:</strong> ${trackingDetails.receiver_id}</p>
+                    <p><strong>Description:</strong> ${trackingDetails.description}</p>
+                    <p><strong>Weight:</strong> ${trackingDetails.weight}</p>
+                    <p><strong>Class:</strong> ${trackingDetails.class}</p>
+                    <p><strong>Post Office ID:</strong> ${trackingDetails.postoffice_id}</p>
+                    <p><strong>Status:</strong> ${trackingDetails.status}</p>
+                `;
+            } catch (error) {
+                console.error('Error:', error);
+                const trackingDetailsDiv = document.getElementById('trackingDetails');
+                trackingDetailsDiv.innerHTML = `<p>Error: ${error.message}</p>`;
+            }
+        }
+    </script>
+</body>
+</html>

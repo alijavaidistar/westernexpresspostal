@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Portal</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 20px;
+            text-align: center;
+        }
+        nav {
+            background-color: #f4f4f4;
+            padding: 10px;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            text-align: center;
+        }
+        nav ul li {
+            display: inline;
+            margin: 0 10px;
+            position: relative;
+        }
+        nav ul li ul {
+            display: none;
+            position: absolute;
+            background-color: #f4f4f4;
+            padding: 0;
+            left: 0;
+            top: 100%;
+        }
+        nav ul li:hover ul {
+            display: block;
+        }
+        nav ul li ul li {
+            display: block;
+            width: 100%;
+            text-align: left;
+        }
+        section {
+            padding: 20px;
+        }
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px 20px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Employee Portal</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="#">Homescreen</a></li>
+            <li><a href="create_label.html">Create Label</a></li>
+            <li><a href="#">Support Page</a></li>
+            <li><a href="#">Tracker Page</a></li>
+            <li><a href="#">Post Office Page</a></li>
+            <li>Manager Reports
+                <ul>
+                    <ul>
+                        <li><a onclick="openReportsPageWithPassword()">Employee</a></li>
+                        <li><a onclick="openReportsPageWithPassword()">Sales</a></li>
+                        <li><a onclick="openReportsPageWithPassword()">Salaries</a></li>
+                        <li><a onclick="openReportsPageWithPassword()">Package</a></li>
+                        <li><a onclick="openReportsPageWithPassword()">Support Tickets</a></li>
+                    </ul>
+                </ul>
+            </li>
+            <li style="float: right;"><a href="#">Sign Out</a></li>
+        </ul>
+    </nav>
+
+
+
+    <section>
+        <h2>Receive package</h2>
+
+        <!-- New form section for submitting package information -->
+        <form onsubmit="submitPackageForm(); return false;">
+            <label for="recipientName">Recipient Name:</label><br>
+            <input type="text" id="recipientName" name="recipientName"><br><br>
+            <input type="submit" value="Submit">
+        </form>
+    </section>
+
+
+    <script>
+        function openReportsPageWithPassword() {
+            var password = prompt("Please enter the password:");
+
+            // You can change the password to your desired value.
+            if (password === "your_password_here") {
+                openReportsPage();
+            } else {
+                alert("Incorrect password. Access denied.");
+            }
+        }
+
+        function openReportsPage() {
+            // Your existing logic for opening reports page here
+        }
+    </script>
+
+
+    <script>
+        // Your existing JavaScript code here
+
+        function submitPackageForm() {
+            var recipientName = document.getElementById('recipientName').value;
+            // Add your logic to handle the recipient name and set the package status to 'Shipped' in your system.
+            // You can use AJAX to send the form data to your server for processing.
+
+            alert("Package information submitted. Status updated to 'Shipped'.");
+        }
+    </script>
+
+
+    
+
+
+
+    <footer>
+        <p>&copy; 2023 Western Express Logistics</p>
+    </footer>
+</body>
+</html>
